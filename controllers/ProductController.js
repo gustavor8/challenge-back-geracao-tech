@@ -1,25 +1,17 @@
-const UsuarioModel = require("../controllers/ProductModel");
+const ProductModel = require("../models/ProductModel");
 
 class ProductController {
-  findAll() {
-    const usuarioModel = new UsuarioModel();
-    return usuarioModel.findAll();
+  async getAll(request, response) {
+    try {
+      const data = await ProductModel.findAll();
+      return response.json(data);
+    } catch (err) {
+      return response.status(500).json({ error: err.message });
+    }
   }
-  findId(id) {
-    const usuarioModel = new UsuarioModel();
-    return usuarioModel.findId();
-  }
-  delete(id) {
-    const usuarioModel = new UsuarioModel();
-    return usuarioModel.delete();
-  }
-  update(id) {
-    const usuarioModel = new UsuarioModel();
-    return usuarioModel.update();
-  }
-  create() {
-    const usuarioModel = new UsuarioModel();
-    return usuarioModel.create();
+
+  create(request, response) {
+    let data = request.body;
   }
 }
-module.exports = ProductsController;
+module.exports = ProductController;

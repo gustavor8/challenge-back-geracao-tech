@@ -9,4 +9,4 @@ const connection = new Sequelize({
   port: 3306,
 });
 
-connection.define("product", {});
+module.exports = connection;

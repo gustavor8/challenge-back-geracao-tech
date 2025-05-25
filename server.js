@@ -1,10 +1,12 @@
 const express = require("express");
-const ProductsRoutes = require("./rotas/ProductsRotas");
-const PublicRoutes = require("./rotas/PublicRoutes");
+
+const PublicRoutes = require("./routes/PublicRoutes");
+const PrivateRoutes = require("./routes/PrivateRoutes");
 
 const app = express();
-app.use(ProductsRoutes);
+app.use(express.json());
 app.use(PublicRoutes);
+app.use(PrivateRoutes);
 
 app.listen(3000, "localhost", () =>
   console.log("Servidor executando em http://localhost:3000")

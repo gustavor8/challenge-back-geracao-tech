@@ -1,8 +1,11 @@
 const { Model } = require("sequelize");
 const UserModel = require("../models/UserModel");
 class AuthController {
-  login(login, pass) {
-    //importa do model usuários para poder fazer a autenticação
+  login(login, password) {
+    if (login === "teste" && password === "teste") {
+      return { userId: 1, role: "admin" }; // Retorna objeto
+    }
+    return null;
   }
 }
 
