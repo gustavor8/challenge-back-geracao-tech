@@ -1,5 +1,5 @@
+require("./config/syncforce");
 const express = require("express");
-
 const PublicRoutes = require("./routes/PublicRoutes");
 const PrivateRoutes = require("./routes/PrivateRoutes");
 

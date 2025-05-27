@@ -19,7 +19,6 @@ PrivateRoutes.use((request, response, next) => {
     console.log("Token válido. Dados:", decoded);
     next();
   } catch (error) {
-    console.error("Erro na verificação:", error);
     return response.status(403).json({
       message: "Token inválido",
       error: error.message,

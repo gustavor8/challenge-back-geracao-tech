@@ -46,7 +46,6 @@ ProductModel.init(
   },
   {
     sequelize: connection,
-    // modelName: "ProductModel",
     tableName: "products",
     timestamps: false,
   }
